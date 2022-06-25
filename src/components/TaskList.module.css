@@ -1,0 +1,103 @@
+.container {
+    width: 46rem;
+    margin: 4rem auto;
+}
+
+.container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.5rem;
+}
+
+.container .header .createdTasks, .concludedTasks {
+    display: flex;
+    gap: 0.5rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header .createdTasks p {
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.container .header .concludedTasks p {
+    font-weight: bold;
+    color: var(--purple);
+}
+
+.container .list div + div {
+    margin-top: 1.5rem;
+}
+
+.counter {
+    background: var(--gray-400);
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.counter span {
+    font-weight: bold;
+    color: var(--gray-200);
+}
+
+.formContainer {
+    height: 3.25rem;
+    width: 46rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.formContainer .taskInput {
+    width: 40rem;
+    height: 3.25rem;
+    color: var(--gray-100);
+
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    background: var(--gray-500);
+
+    padding: 1rem 1rem;
+}
+
+.formContainer .taskInput:focus {
+    border: 1px solid var(--purple-dark);
+}
+
+.taskInput::after {
+    content: "Descrição da Tarefa | ";
+    display: block;
+}
+
+.formContainer .addButton {
+    width: 5.62rem;
+    height: 3.25rem;
+
+    color: var(--gray-100);
+    font-weight: bold;
+
+    border-radius: 8px;
+    border: var(--blue-dark);
+    background: var(--blue-dark);
+    transition: all 0.2s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    padding: 1rem 1rem;
+}
+
+.formContainer .addButton:hover {
+    border: var(--blue);
+    background: var(--blue);
+}
