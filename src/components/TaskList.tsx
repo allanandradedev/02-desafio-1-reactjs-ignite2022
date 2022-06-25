@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { BiPlusCircle } from 'react-icons/bi';
+import { BiClipboard, BiPlusCircle } from 'react-icons/bi';
 
 import { Task } from './Task';
 
@@ -93,7 +93,7 @@ export function TaskList() {
                     </div>
                 </header>
                 <main className={styles.list}>
-                    {tasks.map(task => (
+                    {tasks.length > 0 ? tasks.map(task => (
                         <Task 
                             key={task.id} 
                             title={task.title} 
@@ -101,7 +101,11 @@ export function TaskList() {
                             onComplete={() => handleComplete(task.id)}
                             onRemove={() => handleRemove(task.id)}
                         />
-                    ))} 
+                    )): <div className={styles.emptyList}>
+                            <BiClipboard size={56}/>
+                            <strong>Você ainda não tem tarefas cadastradas</strong>
+                            <p>Crie tarefas e organize seus itens a fazer</p>
+                        </div>} 
                 </main>
             </div>
         </div>
